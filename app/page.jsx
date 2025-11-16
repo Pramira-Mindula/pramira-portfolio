@@ -43,7 +43,7 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Photo */}
           <div className="order-1 lg:order-1 animate-fade-in">
-            <div className="relative w-[30rem] h-[30rem] sm:w-112 sm:h-112 mx-auto lg:mx-0">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem] mx-auto">  
               <Image
                 src="/images/pramira1-1.jpg"
                 alt="Pramira Mindula"
@@ -99,7 +99,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Photo */}
             <div className="animate-fade-in">
-              <div className="relative w-112 h-112 sm:w-[32rem] sm:h-[32rem] lg:w-[36rem] lg:h-[36rem] mx-auto">
+              <div className="relative w-96 h-96 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[36rem] lg:h-[36rem] mx-auto">
                 <Image
                   src="/images/pramira3.png"
                   alt="Pramira Mindula - About"
