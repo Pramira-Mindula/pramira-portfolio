@@ -24,6 +24,8 @@ const Header = () => {
 
           {/* Navigation */}
           <div className="flex items-center gap-8">
+          {/* Desktop Nav */}
+          <div className="hidden lg:flex items-center gap-8">
             <Nav />
             <Button 
               onClick={scrollToContact}
@@ -32,6 +34,13 @@ const Header = () => {
               Hire me
             </Button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden">
+            <Nav />
+          </div>
+        </div>
+
         </div>
       </div>
     </header>
