@@ -117,7 +117,7 @@ export default function Home() {
 
             {/* Content */}
             <div className="animate-fade-in">
-              <h3 className="text-2xl font-bold mb-6 text-white">Education & Background</h3>
+              <h3 className="text-2xl font-bold mb-6 text-white">Education and Background</h3>
               <div className="space-y-6">
                 <div className="bg-gray-700 p-6 rounded-xl">
                   <h4 className="text-xl font-semibold mb-2 text-white">University</h4>
