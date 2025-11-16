@@ -3,10 +3,12 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,6 +47,19 @@ const Nav = () => {
     { id: 'contact', label: 'Contact' },
   ];
 
+  const handleClick = (id) => {
+    setIsOpen(false);
+
+    // If we are on homepage, scroll to section
+    if (pathname === '/') {
+      const element = document.getElementById(id);
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // If on another page, navigate to homepage with hash
+      window.location.href = `/#${id}`;
+    }
+  };
+
   return (
     <>
       {/* Desktop Navigation */}
@@ -52,7 +67,7 @@ const Nav = () => {
         {navItems.map((item) => (
           <button
             key={item.id}
-            onClick={() => scrollToSection(item.id)}
+            onClick={() => handleClick(item.id)}
             className={`text-m font-medium transition-colors duration-200 hover:text-accent ${
               activeSection === item.id ? 'text-accent' : 'text-white'
             }`}
