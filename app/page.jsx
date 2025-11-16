@@ -7,8 +7,6 @@ import { Button } from "@/components/ui/button";
 export default function Home() {
   const sectionRefs = useRef({});
 
-  
-
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {

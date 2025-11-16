@@ -48,7 +48,7 @@ const Nav = () => {
   return (
     <>
       {/* Desktop Navigation */}
-      <nav className="flex items-center space-x-8">
+      <nav className="hidden lg:flex items-center space-x-8">
         {navItems.map((item) => (
           <button
             key={item.id}
@@ -85,7 +85,7 @@ const Nav = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="absolute top-full left-0 right-0 bg-primary shadow-lg z-50">
+          <div className="absolute top-16 left-0 w-full bg-primary shadow-lg z-50 lg:hidden">
             <div className="container-padding py-4">
               {navItems.map((item) => (
                 <button
