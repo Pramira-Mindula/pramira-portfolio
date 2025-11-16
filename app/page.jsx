@@ -70,7 +70,7 @@ export default function Home() {
               A passionate Software Engineering student and web developer.
             </p>
             <p className="text-lg mb-8 text-gray-300">
-              I love building beautiful, functional, and user-focused web applications.
+              I love building innovative, functional, and user-focused web applications.
             </p>
             <button 
               onClick={() => scrollToSection('projects')}
@@ -265,7 +265,7 @@ export default function Home() {
             <div className="fade-in bg-secondary rounded-xl shadow-lg overflow-hidden card-hover">
               <div className="relative h-48">
                 <Image
-                  src="/images/pramira1.png"
+                  src="/images/Apartment-Home.png"
                   alt="Online Apartment Sales System"
                   fill
                   className="object-cover"
@@ -289,7 +289,7 @@ export default function Home() {
             <div className="fade-in bg-secondary rounded-xl shadow-lg overflow-hidden card-hover">
               <div className="relative h-48">
                 <Image
-                  src="/images/pramira2.png"
+                  src="/images/Bridal-Home.png"
                   alt="Bridal Dress Renting System"
                   fill
                   className="object-cover"
@@ -302,8 +302,8 @@ export default function Home() {
                   and inventory tracking for bridal shops.
                 </p>
                 <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-accent-light text-accent text-sm rounded-full">HTML</span>
                   <span className="px-3 py-1 bg-accent-light text-accent text-sm rounded-full">PHP</span>
-                  <span className="px-3 py-1 bg-accent-light text-accent text-sm rounded-full">MySQL</span>
                   <span className="px-3 py-1 bg-accent-light text-accent text-sm rounded-full">JavaScript</span>
                 </div>
               </div>
@@ -313,8 +313,8 @@ export default function Home() {
             <div className="fade-in bg-secondary rounded-xl shadow-lg overflow-hidden card-hover">
               <div className="relative h-48">
                 <Image
-                  src="/images/pramira1.png"
-                  alt="Ride-Hailing System"
+                  src="/images/AquaLink.png"
+                  alt="Ornamental Fish Selling System"
                   fill
                   className="object-cover"
                 />
@@ -327,9 +327,7 @@ export default function Home() {
                   Year 2 Project 2
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-accent-light text-accent text-sm rounded-full">React</span>
-                  <span className="px-3 py-1 bg-accent-light text-accent text-sm rounded-full">Java</span>
-                  <span className="px-3 py-1 bg-accent-light text-accent text-sm rounded-full">MongoDB</span>
+                  <span className="px-3 py-1 bg-accent-light text-accent text-sm rounded-full">MERN Stack</span>
                 </div>
               </div>
             </div>
