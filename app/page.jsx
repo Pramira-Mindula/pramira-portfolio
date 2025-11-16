@@ -1,6 +1,7 @@
 'use client';
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -42,9 +43,9 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Photo */}
           <div className="order-1 lg:order-1 animate-fade-in">
-            <div className="relative w-96 h-96 sm:w-112 sm:h-112 mx-auto lg:mx-0">
+            <div className="relative w-[30rem] h-[30rem] sm:w-112 sm:h-112 mx-auto lg:mx-0">
               <Image
-                src="/images/pramira1.jpg"
+                src="/images/pramira1-1.jpg"
                 alt="Pramira Mindula"
                 fill
                 className="rounded-full object-cover shadow-2xl"
@@ -98,9 +99,9 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Photo */}
             <div className="animate-fade-in">
-              <div className="relative w-80 h-80 sm:w-96 sm:h-96 mx-auto">
+              <div className="relative w-112 h-112 sm:w-[32rem] sm:h-[32rem] lg:w-[36rem] lg:h-[36rem] mx-auto">
                 <Image
-                  src="/images/pramira2.png"
+                  src="/images/pramira3.png"
                   alt="Pramira Mindula - About"
                   fill
                   className="rounded-2xl object-cover shadow-xl"
@@ -262,6 +263,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {/* Project 1 */}
+            <Link href={`/projects/${"apartment"}`}>
             <div className="fade-in bg-secondary rounded-xl shadow-lg overflow-hidden card-hover">
               <div className="relative h-48">
                 <Image
@@ -284,8 +286,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            </Link>
 
             {/* Project 2 */}
+            <Link href={`/projects/${"bridal"}`}>
             <div className="fade-in bg-secondary rounded-xl shadow-lg overflow-hidden card-hover">
               <div className="relative h-48">
                 <Image
@@ -308,8 +312,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            </Link>
 
             {/* Project 3 */}
+            <Link href={`/projects/${"aqualink"}`}>
             <div className="fade-in bg-secondary rounded-xl shadow-lg overflow-hidden card-hover">
               <div className="relative h-48">
                 <Image
@@ -331,6 +337,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            </Link>
           </div>
         </div>
       </section>
