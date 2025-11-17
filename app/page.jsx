@@ -113,7 +113,7 @@ export default function Home() {
             <div className="animate-fade-in">
               <div className="relative w-80 h-80 sm:w-64 sm:h-64 md:w-96 md:h-96 lg:w-[36rem] lg:h-[36rem] mx-auto">
                 <Image
-                  src="/images/pramira3.png"
+                  src="/images/Pramira3.png"
                   alt="Pramira Mindula - About"
                   fill
                   className="rounded-2xl object-cover shadow-xl"
@@ -342,7 +342,7 @@ export default function Home() {
                 <p className="mb-4 text-justify" style={{color: '#ffffff'}}>
                   An inventory management dashboard to manage current stock, item assigning with real-time tracking, 
                   PDF Generation.<br/>
-                  Year 2 Project 2
+                  Year 2 Semester 2 Group Project
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-accent-light text-accent text-sm rounded-full">MERN Stack</span>
