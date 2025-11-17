@@ -28,9 +28,9 @@ export const projects = [
   {
     id: "aqualink",
     title: "AquaLink",
-    github: "https://github.com/your-repo-link",
+    github: "https://github.com/Anjana-deshan/aqualink-backend-app",
     description:
-      "An inventory management dashboard to manage current stock, item assigning with real-time tracking, PDF Generation. Year 2 Project 2.",
+      "An inventory management dashboard to manage current stock, item assigning with real-time tracking, PDF Generation. Year 2 Semester 2 Group Project.",
     images: [
       "/images/AquaLink.png",
       "/images/AquaLink-Inventory.png",

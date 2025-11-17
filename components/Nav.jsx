@@ -105,7 +105,7 @@ const Nav = () => {
               {navItems.map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => handleClick(item.id)}   // ← FIXED
                   className={`block w-full text-left py-3 text-sm font-medium transition-colors duration-200 hover:text-accent ${
                     activeSection === item.id ? 'text-accent' : 'text-white'
                   }`}
@@ -116,6 +116,7 @@ const Nav = () => {
             </div>
           </div>
         )}
+
       </div>
     </>
   );
