@@ -23,6 +23,24 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
+  const skillCategories = [
+    {
+      title: 'Frontend',
+      accent: 'from-sky-500/30 via-blue-500/20 to-purple-500/10',
+      skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Next.js', 'Tailwind CSS'],
+    },
+    {
+      title: 'Backend',
+      accent: 'from-violet-500/30 via-purple-500/20 to-indigo-500/10',
+      skills: ['PHP', 'Node.js', 'Express', 'Java', 'MongoDB', 'MySQL'],
+    },
+    {
+      title: 'Tools',
+      accent: 'from-emerald-500/30 via-cyan-500/20 to-blue-500/10',
+      skills: ['Git', 'GitHub', 'VS Code', 'Figma', 'Postman', 'Cursor.AI'],
+    },
+  ];
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -43,7 +61,7 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Photo */}
           <div className="order-1 lg:order-1 animate-fade-in">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem] mx-auto">  
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem] mx-auto profile-photo-glow">  
               <Image
                 src="/images/pramira1-1.jpg"
                 alt="Pramira Mindula"
@@ -68,7 +86,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-xl mb-4 text-white">
-              A passionate Software Engineering student and web developer.
+              A passionate Software Engineering student and a web developer.
             </p>
             <p className="text-lg mb-8 text-gray-300">
               I love building innovative, functional, and user-focused web applications.
@@ -169,51 +187,26 @@ export default function Home() {
             <div className="w-24 h-1 bg-accent mx-auto"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {/* Frontend Skills */}
-            <div className="fade-in bg-secondary p-8 rounded-xl shadow-lg card-hover">
-              <h3 className="text-xl font-bold mb-6 text-center" style={{color: '#ffffff'}}>Frontend</h3>
-              <div className="space-y-4">
-                {['HTML', 'CSS', 'JavaScript', 'React', 'Tailwind CSS'].map((skill) => (
-                  <div key={skill} className="flex items-center justify-between">
-                    <span style={{color: '#ffffff'}}>{skill}</span>
-                    <div className="w-24 bg-gray-200 rounded-full h-2">
-                      <div className="bg-accent h-2 rounded-full" style={{width: '90%'}}></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-6">
+            {skillCategories.map(({ title, accent, skills }) => (
+              <div key={title} className="fade-in bg-secondary/90 p-8 rounded-2xl shadow-lg card-hover border border-white/5 backdrop-blur-sm">
+                <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-white/80 bg-gradient-to-r ${accent}`}>
+                  <span className="h-2 w-2 rounded-full bg-white"></span>
+                  {title}
+                </div>
+                <div className="mt-6 grid grid-cols-2 gap-3">
+                  {skills.map((skill) => (
+                    <div
+                      key={skill}
+                      className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-primary/30 border border-white/10 shadow-inner hover:border-accent/70 transition-colors duration-200"
+                    >
+                      <span className="h-2 w-2 rounded-full bg-accent shadow-[0_0_15px_rgba(59,130,246,0.8)]"></span>
+                      <span className="text-white font-medium">{skill}</span>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-
-            {/* Backend Skills */}
-            <div className="fade-in bg-secondary p-8 rounded-xl shadow-lg card-hover">
-              <h3 className="text-xl font-bold mb-6 text-center" style={{color: '#ffffff'}}>Backend</h3>
-              <div className="space-y-4">
-                {['PHP', 'Node.js', 'Java', 'MongoDB', 'MySQL'].map((skill) => (
-                  <div key={skill} className="flex items-center justify-between">
-                    <span style={{color: '#ffffff'}}>{skill}</span>
-                    <div className="w-24 bg-gray-200 rounded-full h-2">
-                      <div className="bg-accent h-2 rounded-full" style={{width: '75%'}}></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Tools */}
-            <div className="fade-in bg-secondary p-8 rounded-xl shadow-lg card-hover lg:col-span-1">
-              <h3 className="text-xl font-bold mb-6 text-center" style={{color: '#ffffff'}}>Tools</h3>
-              <div className="space-y-4">
-                {['Git', 'VS Code', 'Figma', 'Postman'].map((skill) => (
-                  <div key={skill} className="flex items-center justify-between">
-                    <span style={{color: '#ffffff'}}>{skill}</span>
-                    <div className="w-24 bg-gray-200 rounded-full h-2">
-                      <div className="bg-accent h-2 rounded-full" style={{width: '80%'}}></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
 
           {/* Education Timeline */}
@@ -454,6 +447,16 @@ export default function Home() {
 
             {/* Contact Form */}
             <form 
+              onSubmit={(e) => {
+                const name = e.target.name.value;
+                const nameRegex = /^[A-Za-z\s]+$/;
+
+                if (!nameRegex.test(name)) {
+                  e.preventDefault();
+                  alert("Name can contain only letters and spaces.");
+                }
+              }}
+
               action="https://api.web3forms.com/submit" 
               method="POST" 
               className="space-y-6"
@@ -520,3 +523,4 @@ export default function Home() {
     </main>
   );
 }
+//Pramira Mindula
